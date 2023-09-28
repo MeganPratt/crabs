@@ -23,7 +23,7 @@ size, and graphics handles. It inputs the name of the image file "BGImage.png" a
 the background image.  <br>
 Dependencies: drawMap( "BGImage.png" ) and drawCapt  <br>
 Call: crabs ()  <br>
-Side effects: graphs the game map <br>
+Side effects: none<br>
 
 Function: drawCapt  <br>
 Purpose: This function draws the captain at the given position (xCapt, yCapt), with heading thetaCapt.  <br>
