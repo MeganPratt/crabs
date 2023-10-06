@@ -5,10 +5,7 @@ function crabs ()
 [mapHeight , mapWidth] = drawMap( "BGImage.png" );
 % Initialize captain location, heading and size
 xCapt = 1000;
-% xCapt did = 1000
-% yCapt did = 500;
 yCapt = 900;
-% thetaCapt was = -pi/2
 thetaCapt = (3*pi)/2;
 sizeCapt = 50;
 % Draw the captain and initialize graphics handles
@@ -16,6 +13,22 @@ sizeCapt = 50;
 % Put your call to drawCapt() here ..... You must give drawCapt its
 % input and output arguments.
 %*******************************************************
-captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt)
+captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt);
+
+cmd = "null"; % initial command
+while ( cmd != "Q") % While not quit, read keyboard and respond
+cmd = kbhit(); % Read the keyboard.
+if( cmd == "w" || cmd == "a" || cmd == "d" ) %Captain has moved. Respond.
+% erase old captain
+for i=1:length( captainGraphics )
+set( captainGraphics(i), 'Visible', 'off' );
+endfor
+% move capt
+[xCapt, yCapt, thetaCapt] = moveCapt(cmd, xCapt, yCapt, thetaCapt, mapHeight, mapWidth);
+% draw new capt
+captainGraphics = drawCapt( xCapt, yCapt, thetaCapt, sizeCapt);
+endif
+endwhile
+
 endfunction
 
