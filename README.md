@@ -55,3 +55,12 @@ in drawCapt to rotate to captain. <br>
 Dependencies: None  <br>
 Call: R = getRotaion (thetaCapt) <br>
 Side effects: None <br>
+
+Function: moveCapt <br>
+Purpose: This function inputs cmd, x, y, and theta and returns xCapt, yCapt, and thetaCapt. Its main purpose is to shift the <br>
+captain's current points to the user's desired location through keyboard-hit commands. Based on what the user enters determines <br>
+the kind of shift required to move the captain. This function associates keyboard-hit commands with how they should move the <br>
+captain by changing the xCapt, yCapt, and thetaCapt. <br>
+Dependencies: None <br>
+Call: (xCapt, yCapt, thetaCapt) = moveCapt(cmd, x, y, theta, width, height) <br>
+Side effects: None <br>
