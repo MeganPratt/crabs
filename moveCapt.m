@@ -6,11 +6,12 @@ dStep = 50;
 if( cmd == "w" ) %move forward
 xTemp = x + dStep*cos(theta);
 yTemp = y + dStep*sin(theta);
-%if(isCaptOnMap(xTemp, yTemp, width, height))
+thetaCapt = theta;
+
+if(isOnMap(xTemp, yTemp, width, height))
 xCapt = xTemp;
 yCapt = yTemp;
-%endif
-thetaCapt = theta;
+endif
 
 elseif ( cmd == "d" ) %turn right
 xCapt = x;
@@ -26,6 +27,7 @@ else % if none of the cases are true, set the new variables equal to the old inp
 xCapt = x;
 yCapt = y;
 thetaCapt = theta;
+
 endif
 
 endfunction
