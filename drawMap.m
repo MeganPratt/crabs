@@ -13,7 +13,7 @@ figure(1);
 
 %read background image and get its size
 img = imread(imageName);
-[height,width] = size(img);
+[width,height] = size(img);
 
 %display background image in figure(1)
 imshow(imageName);

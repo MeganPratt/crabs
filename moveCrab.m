@@ -1,34 +1,49 @@
 function [xCrab, yCrab, thetaCrab] = moveCrab (cmd, x, y, theta, height, width, size)
 
-dStep = 20;
+dStep = 50;
 dTheta = pi/6;
 
 % move left
 if (cmd == "j")
-xCrab = x + dStep*sin(theta);
-yCrab = y - dStep*cos(theta);
-
-%if(isOnMap (xTemp, yTemp, width, height, size))
-%  xCrab = xTemp;
-%  yCrab = yTemp;
-%else
-%  xCrab = x;
-%  yCrab = y;
-%endif
-
+xTemp = x + dStep*sin(theta);
+yTemp = y - dStep*cos(theta);
 thetaCrab = theta;
+
+if(isOnMap (xTemp, yTemp, width, height))
+  xCrab = xTemp;
+  yCrab = yTemp;
+else
+  xCrab = x;
+  yCrab = y;
+endif
 
 % move right
 elseif (cmd == "l")
-xCrab = x - dStep*sin(theta);
-yCrab = y + dStep*cos(theta);
+xTemp = x - dStep*sin(theta);
+yTemp = y + dStep*cos(theta);
 thetaCrab = theta;
+
+if(isOnMap (xTemp, yTemp, width, height))
+  xCrab = xTemp;
+  yCrab = yTemp;
+else
+  xCrab = x;
+  yCrab = y;
+endif
 
 % move back
 elseif (cmd == "k")
-xCrab = x - dStep*cos(theta);
-yCrab = y - dStep*sin(theta);
+xTemp = x - dStep*cos(theta);
+yTemp = y - dStep*sin(theta);
 thetaCrab = theta;
+
+if(isOnMap (xTemp, yTemp, width, height))
+  xCrab = xTemp;
+  yCrab = yTemp;
+else
+  xCrab = x;
+  yCrab = y;
+endif
 
 % rotate right
 elseif (cmd == "o")

@@ -6,5 +6,5 @@ x = [p(1) ; q(1)];
 y = [p(2) ; q(2)];
 % plot
 handle = plot(x,y,color);
-set(handle,"LineWidth",3);
+set(handle,"LineWidth",2);
 endfunction

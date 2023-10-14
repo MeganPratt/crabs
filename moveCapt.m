@@ -8,9 +8,12 @@ xTemp = x + dStep*cos(theta);
 yTemp = y + dStep*sin(theta);
 thetaCapt = theta;
 
-if(isOnMap(xTemp, yTemp, width, height))
-xCapt = xTemp;
-yCapt = yTemp;
+if(isOnMap (xTemp, yTemp, width, height))
+  xCapt = xTemp;
+  yCapt = yTemp;
+else
+  xCapt = x;
+  yCapt = y;
 endif
 
 elseif ( cmd == "d" ) %turn right
