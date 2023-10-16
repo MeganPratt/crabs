@@ -37,6 +37,8 @@ captPt2 = [ -captSize; captSize; 1]; %left waist
 %Capt feet
 captPt3 = [-3*captSize; captSize; 1]; %left
 captPt4 = [-3*captSize; -captSize; 1]; %right
+captPt32 = [-3*captSize; 2*captSize; 1];
+captPt33 = [-3*captSize; -2*captSize; 1];
 
 %Capt right side
 captPt5 = [ -captSize; -captSize; 1]; %right waist
@@ -79,7 +81,7 @@ captPt30 = [ captSize/2; 5*captSize/2; 1];
 captPt31 = [ -captSize/2; 2*captSize; 1];
 
 %captain matrix
-capt = [ captPt1, captPt2, captPt3, captPt4, captPt5, captPt6, captPt7, captPt8, captPt9, captPt10, captPt11, captPt12, captPt13, captPt14, captPt15, captPt16, captPt17, captPt18, captPt19, captPt20, captPt21, captPt22, captPt23, captPt24, captPt25, captPt26, captPt27, captPt28, captPt29, captPt30, captPt31];
+capt = [ captPt1, captPt2, captPt3, captPt4, captPt5, captPt6, captPt7, captPt8, captPt9, captPt10, captPt11, captPt12, captPt13, captPt14, captPt15, captPt16, captPt17, captPt18, captPt19, captPt20, captPt21, captPt22, captPt23, captPt24, captPt25, captPt26, captPt27, captPt28, captPt29, captPt30, captPt31, captPt32, captPt33];
 
 endfunction
 

@@ -53,6 +53,8 @@ pt28=capt( : , 28);
 pt29=capt( : , 29);
 pt30=capt( : , 30);
 pt31=capt( : , 31);
+pt32=capt( : , 32);
+pt33=capt( : , 33);
 
 % Draw the captain and set the return vector of graphics handles.
 captainGraphics(1) = drawLine(pt1 , pt2 , "k");
@@ -64,8 +66,8 @@ captainGraphics(6) = drawLine(pt6 , pt7 , "k");
 captainGraphics(7) = drawLine(pt7 , pt8 , "k");
 captainGraphics(8) = drawLine(pt8 , pt9 , "k");
 captainGraphics(9) = drawLine(pt9 , pt10 , "k");
-captainGraphics(10) = drawLine(pt1 , pt30, "k");
-captainGraphics(11) = drawLine(pt16 , pt11 , "k");
+captainGraphics(10) = drawLine(pt1 , pt29, "k");
+captainGraphics(11) = drawLine(pt16 , pt30 , "k");
 captainGraphics(12) = drawLine(pt6 , pt17 , "k");
 captainGraphics(13) = drawLine(pt17 , pt12 , "k");
 captainGraphics(14) = drawLine(pt13 , pt14 , "k");
@@ -89,6 +91,7 @@ captainGraphics(31) = drawLine(pt25 , pt27 , "k");
 captainGraphics(32) = drawLine(pt8 , pt26, "k");
 captainGraphics(33) = drawLine(pt9 , pt26, "k");
 captainGraphics(34) = drawLine(pt11 , pt29 , "k");
-captainGraphics(35) = drawLine(pt16 , pt31 , "k");
+captainGraphics(35) = drawLine(pt3 , pt32 , "k");
+captainGraphics(36) = drawLine(pt4 , pt33 , "k");
 
 endfunction
