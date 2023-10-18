@@ -65,7 +65,7 @@ Dependencies: isOnMap <br>
 Call: (xCapt, yCapt, thetaCapt) = moveCapt(cmd, x, y, theta, width, height) <br>
 Side effects: None <br>
 
-Function: getCrab
+Function: getCrab <br>
 Purpose: This function generates a matrix representation of the Crab character at the origin with a zero heading. <br>
 Its input number is the size of the Crab to be returned. Each column of the crab matrix is a point of the crab. <br> 
 The points are homogenous column vectors whose first element is x, second y, and third is 1. The coordinate system is x <br>
@@ -74,9 +74,9 @@ Dependencies: None. <br>
 Call: crab = getCrab (size) <br>
 Side effects: None <br>
 
-Function: drawCrab
+Function: drawCrab <br>
 Purpose: This function draws the crab at the given position (xCrab, yCrab), with the heading thetaCrab and size of sizeCrab.  <br>
-This function inputs xCrab, yCrab, thetaCrab, and sizeCrab and returns a vector of graphics handles called crabGrapics.  <br>
+This function inputs xCrab, yCrab, thetaCrab, and sizeCrab and returns a vector of graphics handles called crabGraphics.  <br>
 The matrix getCrab is called using the sizeCrab, the matrix getRotation is then called using the thetaCrab, the getRotation <br>
 matrix is multiplied by the getCrab matrix to get the rotated crab matrix, the getTranslation matrix is called, and then <br>
 the rotated crab matrix is multiplied by the getTranslation matrix to get the crab's position rotated and translated. <br>
@@ -84,7 +84,7 @@ Dependencies: getCrab, getTranslation, getRotation <br>
 Call: h = drawCrab (xCrab, yCrab, thetaCrab, sizeCrab) <br>
 Side effects: draws the crab at the given position (xCrab, yCrab) <br>
 
-Function: moveCrab
+Function: moveCrab <br>
 Purpose: This function inputs cmd, x, y, and theta and returns xCrab, yCrab, and thetaCrab. Its main purpose is to shift the <br>
 crab's current points to the user's desired location through keyboard-hit commands. Based on what the user enters determines <br>
 the kind of shift required to move the crab. This function associates keyboard-hit commands with how they should move the <br>
