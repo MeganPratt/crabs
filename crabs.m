@@ -1,4 +1,4 @@
-function crabs ()
+function crabs (level)
 % Crabs is a kids computer game where a fisherman, called the captain,
 % hunts for a very clever and powerful crab.
 
@@ -17,16 +17,38 @@ yCrab = 1200;
 thetaCrab = -pi/2;
 sizeCrab = 50;
 
-% Draw initial captain and crab
+%initialize jellyfish
+xJelly = rand*mapWidth;
+yJelly = 0;
+thetaJelly = -pi/2;
+sizeJelly = 25;
+
+% Draw initial captain, crab, and jellyfish
 captainGraphics = drawCapt (xCapt , yCapt , thetaCapt , sizeCapt);
 crabGraphics = drawCrab (xCrab, yCrab, thetaCrab, sizeCrab);
+jellyGraphics = drawJelly(xJelly,yJelly,thetaJelly,sizeJelly);
 
 %%%%% main loop %%%%%%%%%%
-cmd = "null"; % initial command
+while(1)
 
-while ( cmd != "Q") % While not quit, read keyboard and respond
+% erase old jellyfish
+for i=1:length(jellyGraphics)
+set( jellyGraphics(i), 'Visible', 'off' );
+endfor
 
-cmd = kbhit(); % Read the keyboard.
+% move jellyfish
+[xJelly,yJelly,thetaJelly] = moveJelly(level, xJelly, yJelly,thetaJelly, sizeJelly, mapHeight,mapWidth);
+
+% draw jellyfish
+jellyGraphics = drawJelly(xJelly,yJelly,thetaJelly,sizeJelly);
+
+% read the keyboard
+cmd = kbhit(1);
+if (cmd == 'Q')
+break;
+endif
+
+%cmd = kbhit(); % Read the keyboard.
 if( cmd == "w" || cmd == "a" || cmd == "d" ) %Captain has moved. Respond.
 
 % erase old captain
@@ -50,11 +72,12 @@ endfor
 %move crab
 [xCrab,yCrab,thetaCrab] = moveCrab(cmd, xCrab, yCrab, thetaCrab, mapWidth, mapHeight);
 
-%draw new captain and crab
+%draw new crab
 crabGraphics = drawCrab (xCrab, yCrab, thetaCrab, sizeCrab);
 
 endif
-
+fflush(stdout);
+pause(.01)
 endwhile
 
 endfunction
