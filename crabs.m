@@ -86,7 +86,7 @@ crabsCaughtStatus = text(crabsCaughtLoc(1), crabsCaughtLoc(2), strcat('Crabs Cau
 
 %erase old crab
 % for i=1:length(crabGraphics)
-%  delete(crabGraphics(i));
+%  delete(crabGraphics(i))
 %endfor
 
 % create a new crab
@@ -123,8 +123,10 @@ endif
 if( cmd == "w" || cmd == "a" || cmd == "d" ) %Captain has moved. Respond.
 
 % erase old captain
+
 for i=1:length (captainGraphics)
-  set( captainGraphics(i), 'Visible', 'off' );
+  delete (captainGraphics(i))
+%  set( captainGraphics(i), 'Visible', 'off' );
 endfor
 
 % move capt
