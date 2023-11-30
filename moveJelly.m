@@ -7,10 +7,10 @@ xJelly = x;
 yJelly = y + dStep;
 thetaJelly = theta;
 
-if ( yJelly > height - 10*size)
+if ( yJelly > height - 3*size)
 
-yJelly = size;
 xJelly = rand*width;
+yJelly = size;
 
 endif
 

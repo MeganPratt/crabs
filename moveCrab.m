@@ -1,67 +1,22 @@
-function [xCrab, yCrab, thetaCrab] = moveCrab (cmd, x, y, theta, height, width)
+function [xCrab, yCrab] = moveCrab(xNet, yNet, xCrab, yCrab, crabStep, width, height, size);
 
-dStep = 50;
-dTheta = pi/6;
+if ((xNet - xCrab) >= 0); %if Captain is to the right of the crab or at the same x position
+  xTemp = xCrab - crabStep*cos(thetaCrab);
+  yTemp = yCrab - crabStep*sin(thetaCrab);
 
-% move left
-if (cmd == "j")
-xTemp = x + dStep*sin(theta);
-yTemp = y - dStep*cos(theta);
-thetaCrab = theta;
+elseif ((xNet - xCrab) < 0); %if Captain is to the left of the crab
+  xTemp = xCrab - crabStep*cos(thetaCrab);
+  yTemp = yCrab - crabStep*sin(thetaCrab);
 
-if(isOnMap (xTemp, yTemp, width, height))
+endif
+
+if (isOnMap(xTemp, yTemp, width, height, size) )
   xCrab = xTemp;
   yCrab = yTemp;
 else
-  xCrab = x;
-  yCrab = y;
-endif
-
-% move right
-elseif (cmd == "l")
-xTemp = x - dStep*sin(theta);
-yTemp = y + dStep*cos(theta);
-thetaCrab = theta;
-
-if(isOnMap (xTemp, yTemp, width, height))
-  xCrab = xTemp;
-  yCrab = yTemp;
-else
-  xCrab = x;
-  yCrab = y;
-endif
-
-% move back
-elseif (cmd == "k")
-xTemp = x - dStep*cos(theta);
-yTemp = y - dStep*sin(theta);
-thetaCrab = theta;
-
-if(isOnMap (xTemp, yTemp, width, height))
-  xCrab = xTemp;
-  yCrab = yTemp;
-else
-  xCrab = x;
-  yCrab = y;
-endif
-
-% rotate right
-elseif (cmd == "o")
-xCrab = x;
-yCrab = y;
-thetaCrab = theta + dTheta;
-
-% rotate left
-elseif (cmd == "i")
-xCrab = x;
-yCrab = y;
-thetaCrab = theta - dTheta;
-
-else
-xCrab = x;
-yCrab = y;
-thetaCrab = theta;
-
+  xCrab = xCrab;
+  yCrab = yCrab;
 endif
 
 endfunction
+

@@ -1,7 +1,5 @@
-function dist = getDist (x1, y1, x2, y2)
+function dist = getDist (netNodeX, netNodeY, xCrabNode, yCrabNode)
 
-dx = x2 - x1;
-dy = y2 - y1;
-dist = sqrt((dx)^2 + (dy)^2);
+  dist = sqrt((netNodeX - xCrabNode)^2 + (netNodeY - yCrabNode)^2);
 
 endfunction
