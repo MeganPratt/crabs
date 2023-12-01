@@ -7,18 +7,24 @@ function [captainGraphics, netNodeX, netNodeY, captNodeX, captNodeY, headNodeX, 
 % Use your code from last week to get the captain matrix
 % for a captain of dimension sizeCapt. Notice that
 % sizeCapt is a parameter passed into drawCapt.
+
 capt = getCapt(sizeCapt);
+
 % shift Captain to new location
 % rotate captain
+
 R = getRotation(thetaCapt);
 captRotated = R*capt;
+
 % shift captain to new location
 T = getTranslation(xCapt,yCapt);
 capt = T*captRotated;
+
 % defining a translation matrix based on what delta-x and delta-y is
 % TODO : Rotate captain from zero heading to heading thetaCapt
 % TODO : Shift the captain from (0 , 0) to (xCapt , yCapt)
 % Extract the captain points from the captain matrix capt.
+
 pt1=capt( : , 1);
 pt2=capt( : , 2);
 pt3=capt( : , 3);
@@ -52,13 +58,21 @@ captNodeY = capt(2, 22);
 headNodeX = capt(1, 22);
 headNodeY = capt(2, 22);
 
+pt24=capt( : , 24);
+pt25=capt( : , 25);
+pt26=capt( : , 26);
+pt27=capt( : , 27);
+pt28=capt( : , 28);
+pt29=capt( : , 29);
+
 % Draw the captain and set the return vector of graphics handles.
+
 captainGraphics(1) = drawLine(pt1 , pt2 , "k");
 captainGraphics(2) = drawLine(pt2 , pt3 , "k");
 captainGraphics(3) = drawLine(pt2 , pt5 , "k");
 captainGraphics(4) = drawLine(pt4 , pt5 , "k");
 captainGraphics(5) = drawLine(pt5 , pt6 , "k");
-captainGraphics(6) = drawLine(pt6 , pt1 , "k");
+captainGraphics(6) = drawLine(pt6 , pt7 , "k");
 captainGraphics(7) = drawLine(pt7 , pt8 , "k");
 captainGraphics(8) = drawLine(pt8 , pt9 , "k");
 captainGraphics(9) = drawLine(pt9 , pt10 , "k");
@@ -73,5 +87,15 @@ captainGraphics(14) = drawLine(pt17 , pt18 , "k");
 captainGraphics(15) = drawLine(pt18 , pt19 , "k");
 captainGraphics(16) = drawLine(pt19, pt20, "k");
 captainGraphics(17) = drawLine(pt20, pt17, "k");
+
+captainGraphics(18) = drawLine(pt24, pt7, "k");
+captainGraphics(19) = drawLine(pt24, pt10, "k");
+captainGraphics(20) = drawLine(pt25, pt29, "k");
+captainGraphics(21) = drawLine(pt10, pt1, "k");
+captainGraphics(22) = drawLine(pt26, pt28, "k");
+captainGraphics(23) = drawLine(pt25, pt29, "k");
+captainGraphics(24) = drawLine(pt8, pt27, "k");
+captainGraphics(25) = drawLine(pt9, pt27, "k");
+
 endfunction
 

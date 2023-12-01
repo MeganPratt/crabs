@@ -43,8 +43,8 @@ captPt4 = [-3*captSize; -captSize; 1]; %right
 %Capt right side
 captPt5 = [ -captSize; -captSize; 1]; % right waist
 captPt6 = [ captSize; -captSize; 1]; % right shoulder
-%head
 
+%head
 captPt7 = [ captSize; -captSize/2; 1];
 captPt8 = [ 2 *captSize; -captSize/2; 1];
 captPt9 = [ 2*captSize; captSize/2; 1];
@@ -60,6 +60,14 @@ captPt14=[ -captSize; -2*captSize; 1]; % base spear
 captPt15=[ -captSize; 2*captSize; 1]; % base of spear
 captPt16=[4*captSize; 2*captSize; 1]; % tip of spear
 
+%hat and beard
+captPt24 = [ captSize/2; 0; 1];    %beard bottom
+captPt25 = [ 3*captSize/2; -captSize/2; 1];   %beard top left
+captPt26 = [ 2*captSize; -captSize; 1];   %hat left
+captPt27 = [ 11*captSize/4; 0; 1];   %hat top
+captPt28 = [ 2*captSize; captSize; 1];  %hat right
+captPt29 = [ 3*captSize/2; captSize/2; 1];   %beard top right
+
 %net
 NetPt1 = [4 * captSize; 0.5 * captSize; 1];
 NetPt2 = [4 * captSize; 3.5 * captSize; 1];
@@ -71,9 +79,11 @@ invisHeadNode = [1.5*captSize; 0; 1];
 
 %invisible node
 NetPt5 = [4.5 * captSize; 2.0 * captSize; 1];
+
 %captain matrix
 capt = [ captPt1, captPt2, captPt3, captPt4, captPt5, captPt6, captPt7, ...
-captPt8, captPt9, captPt10, captPt11, captPt12, captPt13, captPt14, captPt15,captPt16 ...
-NetPt1, NetPt2, NetPt3, NetPt4, NetPt5, invisNodeCapt, invisHeadNode];
+captPt8, captPt9, captPt10, captPt11, captPt12, captPt13, captPt14, captPt15, captPt16, ...
+NetPt1, NetPt2, NetPt3, NetPt4, NetPt5, invisNodeCapt, invisHeadNode, ...
+captPt24, captPt25, captPt26, captPt27, captPt28,captPt29];
 endfunction
 

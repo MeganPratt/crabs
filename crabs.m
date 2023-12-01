@@ -11,6 +11,7 @@ while (playAgain == 1)
 if (level == 'Q')
   break
 endif
+
 [mapHeight , mapWidth] = drawMap( "BGImage.png" );
 
 % Initialize captain location, heading and size
