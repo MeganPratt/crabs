@@ -19,7 +19,6 @@ xCapt = 1000;
 yCapt = 900;
 thetaCapt = pi/6;
 sizeCapt = 50;
-timeDuration = 150 - (30 * (level - 1));
 
 [captGraphics, netNodeX, netNodeY, captNodeX, captNodeY, headNodeX, headNodeY] = drawCapt (xCapt, yCapt, thetaCapt, sizeCapt);
 
@@ -40,6 +39,7 @@ sizeBubble = 30;
 xBubble = rand*mapWidth;
 yBubble = mapHeight - 50*sizeBubble;
 [bubbleGraphics, xBubbleCenter, yBubbleCenter] = drawBubble(xBubble,yBubble,sizeBubble);
+timeDuration = 150 - (30 * (level - 1));
 
 
 % initialize Heart
@@ -255,7 +255,7 @@ endfor
 
 headDistFromBubble = sqrt((xBubbleCenter - headNodeX)^2 + (yBubbleCenter - headNodeY)^2);
 if (headDistFromBubble < 0.5*sizeCapt + 3*sizeBubble)
-  timeDuration = 300 - (30 * (level - 1));
+  timeDuration = 150 - (30 * (level - 1));
 endif
 
 if (timeDuration > 0)
